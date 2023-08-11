@@ -1,0 +1,50 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+matrix                                                                            0x0200      18
+_base_y (alcd_i2c.lib)                                                            0x0212       4
+_pcf8574_addr (alcd_i2c.lib)                                                      0x0216       1
+bus_data (alcd_i2c.lib)                                                           0x0217       1
+_lcd_x                                                                            0x0218       1
+_lcd_y                                                                            0x0219       1
+_lcd_maxx                                                                         0x021A       1
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+i                                                                                 R4,R5        2
+j                                                                                 R6,R7        2
+p                                                                                 R8,R9        2
+pc                                                                                R10,R11      2
+fm                                                                                R13          1
+wait_reset                                                                        R12          1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+getChar                                                                           0x00089     86
+initialiseMatrix                                                                  0x000DF     19
+displayMatrix                                                                     0x000F2     47
+makePlayerMoove                                                                   0x00121    152
+mooveRobot                                                                        0x001B9    357
+displayScore                                                                      0x0031E     20
+checkGame                                                                         0x00332    177
+main                                                                              0x003E3     29
+_lcd_setbit_G100                                                                  0x00400      5
+_lcd_clrbit_G100                                                                  0x00405      7
+_lcd_write_nibble_hi_G100                                                         0x0040C     16
+_lcd_write_data                                                                   0x0041C     14
+lcd_gotoxy                                                                        0x0042A     14
+lcd_clear                                                                         0x00438     12
+lcd_putchar                                                                       0x00444     33
+lcd_i2c_init                                                                      0x00465     41
+pcf8574_write                                                                     0x0048E     13
+_print_G102                                                                       0x0049B    293
+put_lcd_G102                                                                      0x005C0     14
+lcd_printfxy                                                                      0x005CE     46
+strlen                                                                            0x005FC     12
+strlenf                                                                           0x00608     13
