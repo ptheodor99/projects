@@ -46,7 +46,7 @@
 		
 		
 		<footer>
-			<div>&copy; Teodora Jianu 10.05.2023 - Quiz Web - Licenta</div>
+			<div>&copy; 10.05.2023 - Quiz Web - Licenta</div>
 		</footer>
 	
 	</body>
