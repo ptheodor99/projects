@@ -1,0 +1,14 @@
+##############################################
+
+Tic Tac Toe on Microcontroller demonstration
+
+##############################################
+
+You are X and MCU is O.
+You play agains the computer.
+Output is shown on an LCD Display(I2C).
+Input is a 4x4 KeyPad.
+
+##############################################
+
+Demonstration: https://youtube.com/shorts/a92k7rrcTns
