@@ -1,0 +1,473 @@
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x01
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0x0E
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_powerdown=0x04
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powersave=0x06
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_standby=0x0C
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_ext_standby=0x0E
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_adc_noise_red=0x02
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=smcr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;interrupt [21] void usart0_rx_isr(void)
+; 0000 0042 {
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+;PCODE: $0000000E VOL: 0
+; 0000 0043 char status,data;
+; 0000 0044 status=UCSR0A;
+;PCODE: $0000000F VOL: 0
+;PCODE: $00000010 VOL: 0
+;	status -> R17
+;	data -> R16
+;PCODE: $00000011 VOL: 0
+;PCODE: $00000012 VOL: 0
+; 0000 0045 data=UDR0;
+;PCODE: $00000013 VOL: 0
+;PCODE: $00000014 VOL: 0
+; 0000 0046 if ((status & (FRAMING_ERROR | PARITY_ERROR | DATA_OVERRUN))==0)
+;PCODE: $00000015 VOL: 0
+;PCODE: $00000016 VOL: 0
+;PCODE: $00000017 VOL: 0
+; 0000 0047 {
+; 0000 0048 rx_buffer0[rx_wr_index0++]=data;
+;PCODE: $00000018 VOL: 0
+;PCODE: $00000019 VOL: 0
+;PCODE: $0000001A VOL: 0
+;PCODE: $0000001B VOL: 0
+;PCODE: $0000001C VOL: 0
+; 0000 0049 #if RX_BUFFER_SIZE0 == 256
+; 0000 004A // special case for receiver buffer size=256
+; 0000 004B if (++rx_counter0 == 0) rx_buffer_overflow0=1;
+; 0000 004C #else
+; 0000 004D if (rx_wr_index0 == RX_BUFFER_SIZE0) rx_wr_index0=0;
+;PCODE: $0000001D VOL: 0
+;PCODE: $0000001E VOL: 0
+;PCODE: $0000001F VOL: 0
+;PCODE: $00000020 VOL: 0
+; 0000 004E if (++rx_counter0 == RX_BUFFER_SIZE0)
+;PCODE: $00000021 VOL: 0
+;PCODE: $00000022 VOL: 0
+;PCODE: $00000023 VOL: 0
+;PCODE: $00000024 VOL: 0
+;PCODE: $00000025 VOL: 0
+; 0000 004F {
+; 0000 0050 rx_counter0=0;
+;PCODE: $00000026 VOL: 0
+; 0000 0051 rx_buffer_overflow0=1;
+;PCODE: $00000027 VOL: 0
+;PCODE: $00000028 VOL: 0
+; 0000 0052 }
+; 0000 0053 #endif
+; 0000 0054 }
+;PCODE: $00000029 VOL: 0
+; 0000 0055 }
+;PCODE: $0000002A VOL: 0
+;PCODE: $0000002B VOL: 0
+;PCODE: $0000002C VOL: 0
+;PCODE: $0000002D VOL: 0
+;PCODE: $0000002E VOL: 0
+;char getchar(void)
+; 0000 005C {
+;PCODE: $0000002F VOL: 0
+;PCODE: $00000030 VOL: 0
+; 0000 005D char data;
+; 0000 005E while (rx_counter0==0);
+;PCODE: $00000031 VOL: 0
+;	data -> R17
+;PCODE: $00000032 VOL: 0
+;PCODE: $00000033 VOL: 0
+;PCODE: $00000034 VOL: 0
+;PCODE: $00000035 VOL: 0
+;PCODE: $00000036 VOL: 0
+; 0000 005F data=rx_buffer0[rx_rd_index0++];
+;PCODE: $00000037 VOL: 0
+;PCODE: $00000038 VOL: 0
+;PCODE: $00000039 VOL: 0
+;PCODE: $0000003A VOL: 0
+;PCODE: $0000003B VOL: 0
+; 0000 0060 #if RX_BUFFER_SIZE0 != 256
+; 0000 0061 if (rx_rd_index0 == RX_BUFFER_SIZE0) rx_rd_index0=0;
+;PCODE: $0000003C VOL: 0
+;PCODE: $0000003D VOL: 0
+;PCODE: $0000003E VOL: 0
+;PCODE: $0000003F VOL: 0
+; 0000 0062 #endif
+; 0000 0063 #asm("cli")
+;PCODE: $00000040 VOL: 0
+;PCODE: $00000041 VOL: 0
+; 0000 0064 --rx_counter0;
+;PCODE: $00000042 VOL: 0
+; 0000 0065 #asm("sei")
+;PCODE: $00000043 VOL: 0
+; 0000 0066 return data;
+;PCODE: $00000044 VOL: 0
+;PCODE: $00000045 VOL: 0
+;PCODE: $00000046 VOL: 0
+; 0000 0067 }
+;PCODE: $00000047 VOL: 0
+;interrupt [23] void usart0_tx_isr(void)
+; 0000 0077 {
+;PCODE: $00000048 VOL: 0
+;PCODE: $00000049 VOL: 0
+; 0000 0078 if (tx_counter0)
+;PCODE: $0000004A VOL: 0
+;PCODE: $0000004B VOL: 0
+; 0000 0079 {
+; 0000 007A --tx_counter0;
+;PCODE: $0000004C VOL: 0
+; 0000 007B UDR0=tx_buffer0[tx_rd_index0++];
+;PCODE: $0000004D VOL: 0
+;PCODE: $0000004E VOL: 0
+;PCODE: $0000004F VOL: 0
+;PCODE: $00000050 VOL: 0
+;PCODE: $00000051 VOL: 0
+;PCODE: $00000052 VOL: 0
+; 0000 007C #if TX_BUFFER_SIZE0 != 256
+; 0000 007D if (tx_rd_index0 == TX_BUFFER_SIZE0) tx_rd_index0=0;
+;PCODE: $00000053 VOL: 0
+;PCODE: $00000054 VOL: 0
+;PCODE: $00000055 VOL: 0
+;PCODE: $00000056 VOL: 0
+; 0000 007E #endif
+; 0000 007F }
+;PCODE: $00000057 VOL: 0
+; 0000 0080 }
+;PCODE: $00000058 VOL: 0
+;PCODE: $00000059 VOL: 0
+;PCODE: $0000005A VOL: 0
+;PCODE: $0000005B VOL: 0
+;void putchar(char c)
+; 0000 0087 {
+;PCODE: $0000005C VOL: 0
+;PCODE: $0000005D VOL: 0
+; 0000 0088 while (tx_counter0 == TX_BUFFER_SIZE0);
+;PCODE: $0000005E VOL: 0
+;	c -> Y+0
+;PCODE: $0000005F VOL: 0
+;PCODE: $00000060 VOL: 0
+;PCODE: $00000061 VOL: 0
+;PCODE: $00000062 VOL: 0
+;PCODE: $00000063 VOL: 0
+;PCODE: $00000064 VOL: 0
+; 0000 0089 #asm("cli")
+;PCODE: $00000065 VOL: 0
+; 0000 008A if (tx_counter0 || ((UCSR0A & DATA_REGISTER_EMPTY)==0))
+;PCODE: $00000066 VOL: 0
+;PCODE: $00000067 VOL: 0
+;PCODE: $00000068 VOL: 0
+;PCODE: $00000069 VOL: 0
+;PCODE: $0000006A VOL: 0
+;PCODE: $0000006B VOL: 0
+;PCODE: $0000006C VOL: 0
+; 0000 008B {
+; 0000 008C tx_buffer0[tx_wr_index0++]=c;
+;PCODE: $0000006D VOL: 0
+;PCODE: $0000006E VOL: 0
+;PCODE: $0000006F VOL: 0
+;PCODE: $00000070 VOL: 0
+;PCODE: $00000071 VOL: 0
+;PCODE: $00000072 VOL: 0
+; 0000 008D #if TX_BUFFER_SIZE0 != 256
+; 0000 008E if (tx_wr_index0 == TX_BUFFER_SIZE0) tx_wr_index0=0;
+;PCODE: $00000073 VOL: 0
+;PCODE: $00000074 VOL: 0
+;PCODE: $00000075 VOL: 0
+;PCODE: $00000076 VOL: 0
+; 0000 008F #endif
+; 0000 0090 ++tx_counter0;
+;PCODE: $00000077 VOL: 0
+;PCODE: $00000078 VOL: 0
+; 0000 0091 }
+; 0000 0092 else
+;PCODE: $00000079 VOL: 0
+;PCODE: $0000007A VOL: 0
+; 0000 0093 UDR0=c;
+;PCODE: $0000007B VOL: 0
+;PCODE: $0000007C VOL: 0
+; 0000 0094 #asm("sei")
+;PCODE: $0000007D VOL: 0
+;PCODE: $0000007E VOL: 0
+; 0000 0095 }
+;PCODE: $0000007F VOL: 0
+;PCODE: $00000080 VOL: 0
+;PCODE: $00000081 VOL: 0
+;interrupt [14] void timer1_compa_isr(void)
+; 0000 00A3 {
+;PCODE: $00000082 VOL: 0
+;PCODE: $00000083 VOL: 0
+; 0000 00A4 LED1 = ~LED1; // invert LED
+;PCODE: $00000084 VOL: 0
+;PCODE: $00000085 VOL: 0
+;PCODE: $00000086 VOL: 0
+;PCODE: $00000087 VOL: 0
+;PCODE: $00000088 VOL: 0
+;PCODE: $00000089 VOL: 0
+;PCODE: $0000008A VOL: 0
+;PCODE: $0000008B VOL: 0
+;PCODE: $0000008C VOL: 0
+;PCODE: $0000008D VOL: 0
+; 0000 00A5 }
+;PCODE: $0000008E VOL: 0
+;PCODE: $0000008F VOL: 0
+;PCODE: $00000090 VOL: 0
+;void main (void)
+; 0000 00B3 {
+;PCODE: $00000091 VOL: 0
+; 0000 00B4 unsigned char temp, i;
+; 0000 00B5 char* a = "Hello";
+; 0000 00B6 
+; 0000 00B7 GLCDINIT_t glcd_init_data;
+; 0000 00B8 i2c_init();
+;PCODE: $00000092 VOL: 0
+;	temp -> R17
+;	i -> R16
+;	*a -> R18,R19
+;	glcd_init_data -> Y+0
+;PCODE: $00000093 VOL: 0
+;PCODE: $00000094 VOL: 0
+;PCODE: $00000095 VOL: 0
+;PCODE: $00000096 VOL: 0
+; 0000 00B9 glcd_init_data.font=font5x7;
+;PCODE: $00000097 VOL: 0
+;PCODE: $00000098 VOL: 0
+; 0000 00BA // No function is used for reading
+; 0000 00BB // image data from external memory
+; 0000 00BC glcd_init_data.readxmem=NULL;
+;PCODE: $00000099 VOL: 0
+;PCODE: $0000009A VOL: 0
+; 0000 00BD // No function is used for writing
+; 0000 00BE // image data to external memory
+; 0000 00BF glcd_init_data.writexmem=NULL;
+;PCODE: $0000009B VOL: 0
+;PCODE: $0000009C VOL: 0
+; 0000 00C0 // Set horizontal display reverse state
+; 0000 00C1 glcd_init_data.reverse_x=SSD1306_DEFAULT_REVX;
+;PCODE: $0000009D VOL: 0
+;PCODE: $0000009E VOL: 0
+;PCODE: $0000009F VOL: 0
+;PCODE: $000000A0 VOL: 0
+; 0000 00C2 // Set vertical display reverse state
+; 0000 00C3 glcd_init_data.reverse_y=SSD1306_DEFAULT_REVY;
+;PCODE: $000000A1 VOL: 0
+;PCODE: $000000A2 VOL: 0
+;PCODE: $000000A3 VOL: 0
+;PCODE: $000000A4 VOL: 0
+; 0000 00C4 // Specify if the display is interlaced or not
+; 0000 00C5 glcd_init_data.interlaced=SSD1306_DEFAULT_INTERLACED;
+;PCODE: $000000A5 VOL: 0
+;PCODE: $000000A6 VOL: 0
+;PCODE: $000000A7 VOL: 0
+;PCODE: $000000A8 VOL: 0
+; 0000 00C6 // The Vcc voltage is generated by the internal DC/DC converter
+; 0000 00C7 glcd_init_data.external_vcc=SSD1306_USE_INTERNAL_DCDC;
+;PCODE: $000000A9 VOL: 0
+;PCODE: $000000AA VOL: 0
+;PCODE: $000000AB VOL: 0
+;PCODE: $000000AC VOL: 0
+; 0000 00C8 // Set display contrast
+; 0000 00C9 glcd_init_data.contrast=SSD1306_DEFAULT_CONTRAST;
+;PCODE: $000000AD VOL: 0
+;PCODE: $000000AE VOL: 0
+; 0000 00CA 
+; 0000 00CB glcd_init(&glcd_init_data);
+;PCODE: $000000AF VOL: 0
+;PCODE: $000000B0 VOL: 0
+; 0000 00CC 
+; 0000 00CD 
+; 0000 00CE 
+; 0000 00CF 
+; 0000 00D0 glcd_outtext(a);
+;PCODE: $000000B1 VOL: 0
+;PCODE: $000000B2 VOL: 0
+; 0000 00D1 
+; 0000 00D2 
+; 0000 00D3 
+; 0000 00D4 
+; 0000 00D5 
+; 0000 00D6 
+; 0000 00D7 
+; 0000 00D8 
+; 0000 00D9 
+; 0000 00DA 
+; 0000 00DB 
+; 0000 00DC 
+; 0000 00DD 
+; 0000 00DE 
+; 0000 00DF Init_initController();  // this must be the first "init" action/call!
+;PCODE: $000000B3 VOL: 0
+; 0000 00E0 #asm("sei")             // enable interrupts
+;PCODE: $000000B4 VOL: 0
+; 0000 00E1 LED1 = 1;           	// initial state, will be changed by timer 1
+;PCODE: $000000B5 VOL: 0
+;PCODE: $000000B6 VOL: 0
+; 0000 00E2 
+; 0000 00E3 while(TRUE)
+;PCODE: $000000B7 VOL: 0
+; 0000 00E4 {
+; 0000 00E5 
+; 0000 00E6 
+; 0000 00E7 
+; 0000 00E8 
+; 0000 00E9 
+; 0000 00EA 
+; 0000 00EB wdogtrig();	        // call often else processor will reset
+;PCODE: $000000B8 VOL: 0
+; 0000 00EC if(rx_counter0)     // if a character is available on serial port USART0
+;PCODE: $000000B9 VOL: 0
+;PCODE: $000000BA VOL: 0
+; 0000 00ED {
+; 0000 00EE temp = getchar();
+;PCODE: $000000BB VOL: 0
+;PCODE: $000000BC VOL: 0
+; 0000 00EF if(temp == '?')
+;PCODE: $000000BD VOL: 0
+;PCODE: $000000BE VOL: 0
+;PCODE: $000000BF VOL: 0
+; 0000 00F0 printf("\r\nTeam No 2");
+;PCODE: $000000C0 VOL: 0
+;PCODE: $000000C1 VOL: 0
+;PCODE: $000000C2 VOL: 0
+;PCODE: $000000C3 VOL: 0
+;PCODE: $000000C4 VOL: 0
+;PCODE: $000000C5 VOL: 0
+;PCODE: $000000C6 VOL: 0
+; 0000 00F1 else
+;PCODE: $000000C7 VOL: 0
+;PCODE: $000000C8 VOL: 0
+; 0000 00F2 putchar(temp + 1);		// echo back the character + 1 ("a" becomes "b", etc)
+;PCODE: $000000C9 VOL: 0
+;PCODE: $000000CA VOL: 0
+;PCODE: $000000CB VOL: 0
+; 0000 00F3 }
+;PCODE: $000000CC VOL: 0
+; 0000 00F4 
+; 0000 00F5 if(SW1 == 0)        // pressed
+;PCODE: $000000CD VOL: 0
+;PCODE: $000000CE VOL: 0
+;PCODE: $000000CF VOL: 0
+;PCODE: $000000D0 VOL: 0
+; 0000 00F6 {
+; 0000 00F7 delay_ms(30);   // debounce switch
+;PCODE: $000000D1 VOL: 0
+;PCODE: $000000D2 VOL: 0
+;PCODE: $000000D3 VOL: 0
+; 0000 00F8 if(SW1 == 0)
+;PCODE: $000000D4 VOL: 0
+;PCODE: $000000D5 VOL: 0
+;PCODE: $000000D6 VOL: 0
+; 0000 00F9 {
+; 0000 00FA // LED will blink slow or fast
+; 0000 00FB while(SW1 == 0)
+;PCODE: $000000D7 VOL: 0
+;PCODE: $000000D8 VOL: 0
+;PCODE: $000000D9 VOL: 0
+;PCODE: $000000DA VOL: 0
+; 0000 00FC wdogtrig();    // wait for release
+;PCODE: $000000DB VOL: 0
+; 0000 00FD // alternate between values and values/4 for OCR1A register
+; 0000 00FE // 4C40H / 4 = 1310H
+; 0000 00FF // new frequency = old frequency * 4
+; 0000 0100 if(OCR1AH == 0x4C)
+;PCODE: $000000DC VOL: 0
+;PCODE: $000000DD VOL: 0
+;PCODE: $000000DE VOL: 0
+;PCODE: $000000DF VOL: 0
+;PCODE: $000000E0 VOL: 0
+; 0000 0101 {TCNT1H = 0; TCNT1L = 0; OCR1AH = 0x13; OCR1AL = 0x10;}
+;PCODE: $000000E1 VOL: 0
+;PCODE: $000000E2 VOL: 0
+;PCODE: $000000E3 VOL: 0
+;PCODE: $000000E4 VOL: 0
+;PCODE: $000000E5 VOL: 0
+;PCODE: $000000E6 VOL: 0
+;PCODE: $000000E7 VOL: 0
+;PCODE: $000000E8 VOL: 0
+; 0000 0102 else if(OCR1AH == 0x13)
+;PCODE: $000000E9 VOL: 0
+;PCODE: $000000EA VOL: 0
+;PCODE: $000000EB VOL: 0
+;PCODE: $000000EC VOL: 0
+;PCODE: $000000ED VOL: 0
+; 0000 0103 {TCNT1H = 0; TCNT1L = 0; OCR1AH = 0x2F; OCR1AL = 0x20;}
+;PCODE: $000000EE VOL: 0
+;PCODE: $000000EF VOL: 0
+;PCODE: $000000F0 VOL: 0
+;PCODE: $000000F1 VOL: 0
+;PCODE: $000000F2 VOL: 0
+;PCODE: $000000F3 VOL: 0
+;PCODE: $000000F4 VOL: 0
+;PCODE: $000000F5 VOL: 0
+; 0000 0104 else
+;PCODE: $000000F6 VOL: 0
+;PCODE: $000000F7 VOL: 0
+; 0000 0105 {TCNT1H = 0; TCNT1L = 0; OCR1AH = 0x4C; OCR1AL = 0x40;}
+;PCODE: $000000F8 VOL: 0
+;PCODE: $000000F9 VOL: 0
+;PCODE: $000000FA VOL: 0
+;PCODE: $000000FB VOL: 0
+;PCODE: $000000FC VOL: 0
+;PCODE: $000000FD VOL: 0
+;PCODE: $000000FE VOL: 0
+;PCODE: $000000FF VOL: 0
+;PCODE: $00000100 VOL: 0
+;PCODE: $00000101 VOL: 0
+; 0000 0106 }
+; 0000 0107 }
+;PCODE: $00000102 VOL: 0
+; 0000 0108 
+; 0000 0109 // measure time intervals on oscilloscope connected to pin TESTP
+; 0000 010A for(i = 0; i < 3; i++)
+;PCODE: $00000103 VOL: 0
+;PCODE: $00000104 VOL: 0
+;PCODE: $00000105 VOL: 0
+;PCODE: $00000106 VOL: 0
+;PCODE: $00000107 VOL: 0
+;PCODE: $00000108 VOL: 0
+;PCODE: $00000109 VOL: 0
+;PCODE: $0000010A VOL: 0
+;PCODE: $0000010B VOL: 0
+;PCODE: $0000010C VOL: 0
+; 0000 010B {
+; 0000 010C TESTP = 1;
+;PCODE: $0000010D VOL: 0
+;PCODE: $0000010E VOL: 0
+; 0000 010D delay_us(1);
+;PCODE: $0000010F VOL: 0
+; 0000 010E TESTP = 0;   // may check accuracy of 1us interval on oscilloscope
+;PCODE: $00000110 VOL: 0
+;PCODE: $00000111 VOL: 0
+; 0000 010F }
+;PCODE: $00000112 VOL: 0
+;PCODE: $00000113 VOL: 0
+;PCODE: $00000114 VOL: 0
+;PCODE: $00000115 VOL: 0
+;PCODE: $00000116 VOL: 0
+; 0000 0110 }
+;PCODE: $00000117 VOL: 0
+;PCODE: $00000118 VOL: 0
+; 0000 0111 
+; 0000 0112 
+; 0000 0113 }
+;PCODE: $00000119 VOL: 0
+;PCODE: $0000011A VOL: 0
+;PCODE: $0000011B VOL: 0
+;PCODE: $0000011C VOL: 0
+
+	.DSEG
+_0x18:
+	.BYTE 0x6
