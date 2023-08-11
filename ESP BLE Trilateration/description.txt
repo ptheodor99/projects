@@ -1,0 +1,12 @@
+####################################################
+
+ESP BLE Trilateration
+
+####################################################
+
+In the database are some values set for the dimension of the flat and also for the possition
+of the 3 ESPs. With those a map of the flat is made. ESP_Baliza is measuring the signal strength
+of ESPColt and converts it into distance so that it determines the possition of in the flat.
+Then the map is checked and the room is shown on an android app.
+
+Demonstration: https://youtube.com/shorts/62x7zjGxvrQ
