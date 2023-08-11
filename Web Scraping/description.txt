@@ -1,0 +1,14 @@
+###########################################
+
+Web Scraping for E-Commerce Platform
+
+###########################################
+
+The app gets the names and prices of the producs available on the link in the code.
+Data can be seen in the textbox in the app and also in console.
+A graph is made with the data.
+Data can be saved in an excel file.
+
+###########################################
+
+Demonstration: https://youtu.be/pnzUcB-jehw
