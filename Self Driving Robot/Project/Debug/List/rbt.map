@@ -1,0 +1,28 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+i                                                                                 R4           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+mooveForward                                                                      0x0005B      6
+mooveBackward                                                                     0x00061      4
+mooveLeft                                                                         0x00065      6
+mooveRight                                                                        0x0006B      7
+Stop                                                                              0x00072      7
+readHCF                                                                           0x00079     18
+getHCF                                                                            0x0008B     10
+readHCS                                                                           0x00095     18
+getHCS                                                                            0x000A7     10
+readHCD                                                                           0x000B1     18
+getHCD                                                                            0x000C3     17
+main                                                                              0x000D4    161
