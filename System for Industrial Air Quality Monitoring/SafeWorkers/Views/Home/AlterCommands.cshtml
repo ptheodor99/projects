@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Alter Commands";
+}
+
+
+<p><b>Comenzile actuale sunt:</b></p>
+<ul>
+    @if(ViewBag.CommandsObject.Red == "OFF")
+    {
+        <li>LED Rosu: Oprit</li>
+    }
+    else
+    {
+        <li>LED Rosu: Pornit pentru @ViewBag.CommandsTimeObject.Red secunde</li>
+    }
+
+    @if(ViewBag.CommandsObject.Yellow == "OFF")
+    {
+        <li>LED Galben: Oprit</li>
+    }
+    else
+    {
+        <li>LED Galben: Pornit pentru @ViewBag.CommandsTimeObject.Yellow secunde</li>
+    }
+
+    @if(ViewBag.CommandsObject.Green == "OFF")
+    {
+        <li>LED Verde: Oprit</li>
+    }
+    else
+    {
+        <li>LED Verde: Pornit pentru @ViewBag.CommandsTimeObject.Green secunde</li>
+    }
+
+    @if(ViewBag.CommandsObject.Buzzer == "OFF")
+    {
+        <li>Buzzer: Oprit</li>
+    }
+    else
+    {
+        <li>Buzzer: Pornit pentru @ViewBag.CommandsTimeObject.Buzzer secunde</li>
+    }
+
+    @if(ViewBag.CommandsObject.Test == "OFF")
+    {
+        <li>Test: Oprit</li>
+    }
+    else
+    {
+        <li>Test: Pornit pentru @ViewBag.CommandsTimeObject.Test secunde</li>
+    }
+</ul>
+<br />
+
+<form method="post">
+    <fieldset>
+        <label>Selecteaza dispozitivul:</label>
+        <br />
+        <select name = "Apps">
+            <optgroup label="Dispozitiv">
+                <option value="Red">Rosu</option>
+                <option value="Yellow">Galben</option>
+                <option value="Green">Verde</option>
+                <option value="Buzzer">Buzzer</option>
+                <option value="Alarm">Alarm</option>
+            </optgroup>
+        </select>
+        <br />
+        <label>Selecteaza comanda:</label>
+        <br />
+        <select name="Command">
+            <optgroup label="Comanda">
+                <option value="ON">Pornit</option>
+                <option value="Test">Testeaza</option>
+                <option value="None">Reincarca</option>
+            </optgroup>
+        </select>
+        <br />
+        <label>Introdu timpul daca ai ales Pornit</label>
+        <br />
+        <input type="text" name="Time" style="width:80px;" />
+        <br />
+        <input type="submit" value="Modifica" />
+    </fieldset>
+</form>
+
+<br />
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi</a>

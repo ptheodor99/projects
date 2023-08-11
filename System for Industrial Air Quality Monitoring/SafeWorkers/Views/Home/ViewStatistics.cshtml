@@ -1,0 +1,205 @@
+﻿@{
+    ViewData["Title"] = "View Statistics";
+}
+
+
+
+           
+<p><b>Mediile sunt:</b></p>
+
+<ul>
+    <li>
+        Hidrogen (H2) [ppm]: @ViewBag.AllModelAvg.H2
+    </li>
+    <li>
+        Gaz petrolier lichefiat (LPG) [ppm]: @ViewBag.AllModelAvg.LPG
+    </li>
+    <li>
+        Metan (CH4) [ppm]: @ViewBag.AllModelAvg.Methane
+    </li>
+    <li>
+        Monoxid de carbon (CO) [ppm]: @ViewBag.AllModelAvg.CO
+    </li>
+    <li>
+        Alcool [ppm]: @ViewBag.AllModelAvg.Alcohol
+    </li>
+    <li>
+        Fum [ppm]: @ViewBag.AllModelAvg.Smoke
+    </li>
+    <li>
+        Propan (C3H8) [ppm]: @ViewBag.AllModelAvg.Propane
+    </li>
+    <li>
+        Dioxid de carbon (CO2) [ppm]: @ViewBag.AllModelAvg.CO2
+    </li>
+    <li>
+        Amoniac (NH4) [ppm]: @ViewBag.AllModelAvg.NH4
+    </li>
+    <li>
+        Toluen (C7H8) [ppm]: @ViewBag.AllModelAvg.Toluene
+    </li>
+    <li>
+        Acetona (C3H6O) [ppm]: @ViewBag.AllModelAvg.Acetone
+    </li>
+    <li>
+        Temperatura [grade Celsisus]: @ViewBag.AllModelAvg.Temperature
+    </li>
+    <li>
+        Umiditate [%]: @ViewBag.AllModelAvg.Humidity
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
+
+<script>
+    window.onload = function () {
+
+
+
+
+        var Stats3Chart = new CanvasJS.Chart("AirStats3", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "Statistica calitate aer CO2"
+            },
+            toolTip: {
+                shared: true
+            },
+            data: [
+        {
+        type: "line",
+        name: "CO2",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.CO2)
+    }
+            ]
+        });
+
+
+
+        var StatsChart = new CanvasJS.Chart("AirStats", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "Statistica calitate aer Gaze"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "H2",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.H2)
+    },
+        {
+        type: "line",
+        name: "LPG",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.LPG)
+    },
+        {
+        type: "line",
+        name: "Methane",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Methane)
+    },
+        {
+        type: "line",
+        name: "CO",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.CO)
+    },
+        {
+        type: "line",
+        name: "Alcohol",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Alcohol)
+    },
+        {
+        type: "line",
+        name: "Smoke",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Smoke)
+    },
+        {
+        type: "line",
+        name: "Propane",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Propane)
+    },
+        {
+        type: "line",
+        name: "NH4",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.NH4)
+    },
+        {
+        type: "line",
+        name: "Toluene",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Toluene)
+    },
+        {
+        type: "line",
+        name: "Acetone",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Acetone)
+    }
+    ]
+    });
+
+
+        var Stats2Chart = new CanvasJS.Chart("AirStats2", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "Statistica calitate aer"
+            },
+            toolTip: {
+                shared: true
+            },
+            data: [
+                {
+        type: "line",
+        name: "Temperature",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Temperature)
+    },
+        {
+        type: "line",
+        name: "Humidity",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Humidity)
+    }
+            ]
+        });
+
+        StatsChart.render();
+        Stats2Chart.render();
+        Stats3Chart.render();
+    }
+
+
+</script>
+
+
+<div id="AirStats3" style="height: 370px; width: 100%;"></div>
+<div id="AirStats" style="height: 370px; width: 100%;"></div>
+<div id="AirStats2" style="height: 370px; width: 100%;"></div>
+
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi</a>

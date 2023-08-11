@@ -1,0 +1,31 @@
+﻿@model DangerModel
+@{
+    ViewData["Title"] = "Danger";
+}
+
+
+
+<div>
+    <p>
+        Parametrii maximi admisi sunt:
+    </p>
+
+    <ul>
+        <li>H2 : @Model.H2 ppm</li>
+        <li>LPG : @Model.LPG ppm </li>
+        <li>Metan : @Model.Methane ppm</li>
+        <li>CO : @Model.CO ppm</li>
+        <li>Alcool : @Model.Alcohol ppm</li>
+        <li>Fum : @Model.Smoke ppm</li>
+        <li>Propan : @Model.Propane ppm</li>
+        <li>CO2 : @Model.CO2 ppm</li>
+        <li>NH4 : @Model.NH4 ppm</li>
+        <li>Toluen : @Model.Toluene ppm</li>
+        <li>Acetona : @Model.Acetone ppm</li>
+        <li>Temperatura : @Model.Temperature grade</li>
+        <li>Umiditate : @Model.Humidity%</li>
+    </ul>
+
+</div>
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi</a>

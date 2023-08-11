@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Alter MQ2_1";
+}
+
+
+<table>
+    <tr>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Hidrogen (H2) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Gaz petrolier lichefiat (LPG) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Metan (CH4) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Monoxid de carbon (CO) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Alcool [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Fum [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Propan (C3H8) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Moment de timp</th>
+    </tr>
+
+    @foreach (var x in ViewBag.MQ2_1_List)
+    {
+        <tr>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.H2</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.LPG</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Methane</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.CO</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Alcohol</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Smoke</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Propane</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.TimeStamp</td>
+        </tr>
+    }
+</table>
+
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a>
+<br />
+<a href="/Home/AlterTabels" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>

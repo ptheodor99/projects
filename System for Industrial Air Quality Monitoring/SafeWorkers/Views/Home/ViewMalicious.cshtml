@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "View Malicious";
+}
+
+
+<table>
+    <tr>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Timp de masurare</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Timp alarma pornita</th>
+    </tr>
+
+    <tr>
+        <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.MeasureTime</td>
+        <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.AlarmTime</td>
+    </tr>
+        
+</table>
+
+
+
+
+<br />
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi</a>

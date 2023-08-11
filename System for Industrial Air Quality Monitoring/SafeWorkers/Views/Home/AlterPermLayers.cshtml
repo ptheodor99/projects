@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Alter PermLayers";
+}
+
+<form method="post">
+    <fieldset>
+        <table>
+            <tr>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Nivel de permisiuni</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">WR</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">RR</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Modifica toate datele</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Modifica date comune</th>
+            </tr>
+
+            @foreach (var x in ViewBag.PermLayersList)
+            {
+                <tr>
+                    <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.LayerLevel</td>
+                    <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.WR</td>
+                    <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.RR</td>
+                    <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.ModifyAllData</td>
+                    <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.ModifyOrdinary</td>
+                </tr>
+            }
+
+        </table>
+        <!--
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                  <input type="text" name="LayerLevel" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="WR" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="RR" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="ModifyAllData" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="ModifyOrdinary" style="width:80px;" />
+                </td>
+            </tr>
+        </table>
+
+        <label>Alege nivelul pe care vrei sa il modifici</label>
+        <br />
+        <select name="Layers">
+            <optgroup label="Alege nivelul">
+                <option value="None">None</option>
+                @foreach (var x in ViewBag.PermLayersList)
+                {
+                    <option value="@x.LayerLevel">@x.LayerLevel</option>
+                }
+            </optgroup>
+        </select>
+        <br />
+        <label>Alege actiunea dorita:</label>
+        <br />
+        <select name="Action">
+            <optgroup label="Alege actiunea">
+                <option value="add">Adauga</option>
+                <option value="delete">Sterge</option>
+                <option value="modify">Modifica</option>
+            </optgroup>
+        </select>
+        <br />
+        <input type="submit" value="Modifica" />-->
+    </fieldset>
+</form>
+
+
+<br />
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a>
+<br />
+<a href="/Home/AlterTabels" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>

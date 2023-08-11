@@ -1,0 +1,381 @@
+﻿@{
+    ViewData["Title"] = "RealTimeData";
+}
+
+
+
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<script>
+window.onload = function () {
+
+    var MQ2_1_Chart = new CanvasJS.Chart("MQ2_1", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "MQ2_1"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "H2",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_1_H2)
+    },
+        {
+        type: "line",
+        name: "LPG",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_1_LPG)
+    },
+        {
+        type: "line",
+        name: "Methane",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_1_Methane)
+    },
+        {
+        type: "line",
+        name: "CO",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_1_CO)
+    },
+        {
+        type: "line",
+        name: "Alcohol",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_1_Alcohol)
+    },
+        {
+        type: "line",
+        name: "Smoke",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_1_Smoke)
+    },
+        {
+        type: "line",
+        name: "Propane",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_1_Propane)
+    }
+    ]
+    });
+
+
+
+     var MQ2_2_Chart = new CanvasJS.Chart("MQ2_2", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "MQ2_2"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "H2",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_2_H2)
+    },
+        {
+        type: "line",
+        name: "LPG",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_2_LPG)
+    },
+        {
+        type: "line",
+        name: "Methane",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_2_Methane)
+    },
+        {
+        type: "line",
+        name: "CO",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_2_CO)
+    },
+        {
+        type: "line",
+        name: "Alcohol",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_2_Alcohol)
+    },
+        {
+        type: "line",
+        name: "Smoke",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_2_Smoke)
+    },
+        {
+        type: "line",
+        name: "Propane",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ2_2_Propane)
+    }
+    ]
+    });
+
+
+
+
+
+
+
+    var MQ9_1_Chart = new CanvasJS.Chart("MQ9_1", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "MQ9_1"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "LPG",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ9_1_LPG)
+    },
+        {
+        type: "line",
+        name: "CO",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ9_1_CO)
+    },
+        {
+        type: "line",
+        name: "Methane",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ9_1_Methane)
+    }
+    ]
+    });
+
+
+
+
+
+
+
+    var MQ9_2_Chart = new CanvasJS.Chart("MQ9_2", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "MQ9_2"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "LPG",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ9_2_LPG)
+    },
+        {
+        type: "line",
+        name: "CO",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ9_2_CO)
+    },
+        {
+        type: "line",
+        name: "Methane",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ9_2_Methane)
+    }
+    ]
+    });
+
+
+
+    var MQ135_1_Chart = new CanvasJS.Chart("MQ135_1", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "MQ135_1"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "CO2",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_1_CO2)
+    },
+        {
+        type: "line",
+        name: "CO",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_1_CO)
+    },
+        {
+        type: "line",
+        name: "Alcohol",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_1_Alcohol)
+    },
+        {
+        type: "line",
+        name: "NH4",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_1_NH4)
+    },
+        {
+        type: "line",
+        name: "Toluene",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_1_Toluene)
+    },
+        {
+        type: "line",
+        name: "Acetone",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_1_Acetone)
+    }
+    ]
+    });
+
+
+
+
+    var MQ135_2_Chart = new CanvasJS.Chart("MQ135_2", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "MQ135_2"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "CO2",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_2_CO2)
+    },
+        {
+        type: "line",
+        name: "CO",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_2_CO)
+    },
+        {
+        type: "line",
+        name: "Alcohol",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_2_Alcohol)
+    },
+        {
+        type: "line",
+        name: "NH4",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_2_NH4)
+    },
+        {
+        type: "line",
+        name: "Toluene",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_2_Toluene)
+    },
+        {
+        type: "line",
+        name: "Acetone",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.MQ135_2_Acetone)
+    }
+    ]
+    });
+
+
+
+
+
+
+    var DHT_1_Chart = new CanvasJS.Chart("DHT_1", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "DHT_1"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "Temperature",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.DHT_1_Temperature)
+    },
+        {
+        type: "line",
+        name: "Humidity",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.DHT_1_Humidity)
+    }
+    ]
+    });
+
+
+
+     var DHT_2_Chart = new CanvasJS.Chart("DHT_2", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "DHT_2"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "Temperature",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.DHT_2_Temperature)
+    },
+        {
+        type: "line",
+        name: "Humidity",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.DHT_2_Humidity)
+    }
+    ]
+    });
+
+    MQ2_1_Chart.render();
+    MQ2_2_Chart.render();
+    MQ9_1_Chart.render();
+    MQ9_2_Chart.render();
+    MQ135_1_Chart.render();
+    MQ135_2_Chart.render();
+    DHT_1_Chart.render();
+    DHT_2_Chart.render();
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+<div id="MQ2_1" style="height: 370px; width: 100%;"></div>
+<div id="MQ2_2" style="height: 370px; width: 100%;"></div>
+<div id="MQ9_1" style="height: 370px; width: 100%;"></div>
+<div id="MQ9_2" style="height: 370px; width: 100%;"></div>
+<div id="MQ135_1" style="height: 370px; width: 100%;"></div>
+<div id="MQ135_2" style="height: 370px; width: 100%;"></div>
+<div id="DHT_1" style="height: 370px; width: 100%;"></div>
+<div id="DHT_2" style="height: 370px; width: 100%;"></div>
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi</a>

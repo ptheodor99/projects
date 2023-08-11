@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+   
+    <form method="post">
+        <fieldset>
+            <label>Cod de utilizator:</label><br />
+            <input type="text" name="user" /><br />
+            <label>Parola:</label><br />
+            <input type="password" name="password" /><br /><br />
+            <input type="submit" value="Login" />
+        </fieldset>
+    </form>
+
+   @if(ViewBag.BadCred == true){
+    <br />
+    <p style="color:red;">Date de logare invalide!!</p>
+    }
+
+</div>

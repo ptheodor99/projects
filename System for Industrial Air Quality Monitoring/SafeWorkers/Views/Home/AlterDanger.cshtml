@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Alter Danger";
+}
+
+
+<form method="post">
+    <fieldset>
+
+        <table>
+            <tr>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Hidrogen (H2) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Gaz petrolier lichefiat (LPG) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Metan (CH4) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Monoxid de carbon (CO) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Alcool [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Fum [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Propan (C3H8) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Dioxid de carbon (CO2) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Amoniac (NH4) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Toluen (C7H8) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Acetona (C3H6O) [ppm]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Temperatura [grade Celsisus]</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Umiditate [%]</th>
+            </tr>
+
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.H2</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.LPG</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.Methane</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.CO</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.Alcohol</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.Smoke</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.Propane</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.CO2</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.NH4</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.Toluene</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.Acetone</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.Temperature</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.DangerModelObject.Humidity</td>
+
+            </tr>
+
+
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="H2" name="H2" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="LPG" name="LPG" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="Methane" name="Methane" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="CO" name="CO" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="Alcohol" name="Alcohol" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="Smoke" name="Smoke" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="Propane" name="Propane" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="CO2" name="CO2" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="NH4" name="NH4" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="Toluene" name="Toluene" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="Acetone" name="Acetone" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="Temperature" name="Temperature" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" id="Humidity" name="Humidity" style="width:80px;" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <input type="submit" value="Modifica"/>
+    </fieldset>
+</form>
+
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a><br />
+<a href="/Home/AlterTabels" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>

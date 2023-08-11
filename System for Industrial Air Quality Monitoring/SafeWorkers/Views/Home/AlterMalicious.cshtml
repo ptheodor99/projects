@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Alter Malicious";
+}
+
+
+<form method="post">
+    <fieldset>
+        <table>
+            <tr>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Timp de masurare</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Timp alarma pornita</th>
+            </tr>
+
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.MeasureTime</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.AlarmTime</td>
+            </tr>
+
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MeasureTime" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="AlarmTime" style="width:80px;" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <input type="submit" value="Modifica" />
+    </fieldset>
+</form>
+
+
+
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a>
+<br />
+<a href="/Home/AlterTabels" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>

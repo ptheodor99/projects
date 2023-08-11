@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Alter MQ135_2";
+}
+
+
+<table>
+    <tr>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Dioxid de carbon (CO2) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Monoxid de carbon (CO) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Alcool [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Amoniac (NH4) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Toluen (C7H8) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Acetona (C3H6O) [ppm]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Moment de timp</th>
+    </tr>
+
+    @foreach (var x in ViewBag.MQ135_2_List)
+    {
+        <tr>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.CO2</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.CO</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Alcohol</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.NH4</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Toluene</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Acetone</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.TimeStamp</td>
+        </tr>
+    }
+</table>
+
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a>
+<br />
+<a href="/Home/AlterTabels" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>

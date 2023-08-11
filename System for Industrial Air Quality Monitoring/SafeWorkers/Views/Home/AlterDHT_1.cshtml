@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Alter DHT_1";
+}
+
+
+<table>
+    <tr>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Temperatura [grade Celsisu]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Umiditate (H2) [%]</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Moment de timp</th>
+    </tr>
+
+    @foreach (var x in ViewBag.DHT_1_List)
+    {
+        <tr>            
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Temperature</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Humidity</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.TimeStamp</td>
+        </tr>
+    }
+</table>
+
+
+<a href="/Home/PageSelect" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a>
+<br />
+<a href="/Home/AlterTabels" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>
