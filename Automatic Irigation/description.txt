@@ -1,0 +1,12 @@
+####################################################
+
+Automatic Irigation
+
+####################################################
+
+The system will detected if the soil humidity is lower than 80% and if is, it will start the
+whatering. After a watering the system will not water the plants again for 5 minutes. If after
+5 minutes, after the soil has absorbed the water the humidity is still under 80%, the system
+will start the irigation again.
+
+Demonstration: https://youtube.com/shorts/42BReSVOubE
