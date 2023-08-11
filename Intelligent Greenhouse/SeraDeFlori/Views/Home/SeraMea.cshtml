@@ -1,0 +1,235 @@
+﻿<!--model List<MyFlowers>;-->
+
+@{ ViewData["Title"] = "SeraMea";
+}
+<h2>Sera Mea</h2>
+
+<!--
+
+<div>
+
+    foreach (MyFlowers x in Model)
+    {
+
+        <div style="background-color:white; width:500px; height:500px; display:inline-block">
+
+            <div style="background-color:#333333; width:300px;height:400px;" class="text-center">
+                <img src="~/InfoFloriImg/x.FlowerCode" style="height:180px; width:240px;position:relative;top:30px; border:2px solid white;" />
+                <p style="color:white;position:relative;top:50px;" text-align:center"><b>x.Name</b></p>
+                <br /><br />
+                <ul>
+
+                   if (x.Name == "Margareta")
+                    {
+
+                        if (ViewBag.x1 >= 21 && ViewBag.x1 <= 23)
+                        {
+                            <li style="color: green"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 21 && ViewBag.x1 >= 19) || (ViewBag.x1 > 23 && ViewBag.x1 <= 25))
+                        {
+                            <li style="color: orange"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 19 && ViewBag.x1 >= 14) || (ViewBag.x1 > 25 && ViewBag.x1 <= 30))
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if (ViewBag.x1 < 14)
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Inghet</b></li>
+                        }
+                        else
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Supraincalzire</b></li>
+                        }
+
+
+
+                    }
+                    else if (x.Name == "Trandafir")
+                    {
+
+                        if (ViewBag.x1 >= 19 && ViewBag.x1 <= 21)
+                        {
+                            <li style="color: green"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 19 && ViewBag.x1 >= 18) || (ViewBag.x1 > 21 && ViewBag.x1 <= 22))
+                        {
+                            <li style="color: orange"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 18 && ViewBag.x1 >= 16) || (ViewBag.x1 > 22 && ViewBag.x1 <= 24))
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if (ViewBag.x1 < 16)
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Inghet</b></li>
+                        }
+                        else
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Supraincalzire</b></li>
+                        }
+
+
+                    }
+                    else if (x.Name == "Crin")
+                    {
+                        if (ViewBag.x1 >= 19 && ViewBag.x1 <= 21)
+                        {
+                            <li style="color: green"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 19 && ViewBag.x1 >= 18) || (ViewBag.x1 > 21 && ViewBag.x1 <= 23))
+                        {
+                            <li style="color: orange"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 17 && ViewBag.x1 >= 15) || (ViewBag.x1 > 23 && ViewBag.x1 <= 25))
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if (ViewBag.x1 < 15)
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Inghet</b></li>
+                        }
+                        else
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Supraincalzire</b></li>
+                        }
+                    }
+                    else if (x.Name == "Lalea" || x.Name == "Garoafa")
+                    {
+                        if (ViewBag.x1 >= 14 && ViewBag.x1 <= 16)
+                        {
+                            <li style="color: green"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 14 && ViewBag.x1 >= 13) || (ViewBag.x1 > 16 && ViewBag.x1 <= 17))
+                        {
+                            <li style="color: orange"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 13 && ViewBag.x1 >= 11) || (ViewBag.x1 > 19 && ViewBag.x1 <= 17))
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if (ViewBag.x1 < 11)
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Inghet</b></li>
+                        }
+                        else
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Supraincalzire</b></li>
+                        }
+                    }
+                    else if (x.Name == "Muscata")
+                    {
+                        if (ViewBag.x1 >= 11 && ViewBag.x1 <= 13)
+                        {
+                            <li style="color: green"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 11 && ViewBag.x1 >= 10) || (ViewBag.x1 > 13 && ViewBag.x1 <= 14))
+                        {
+                            <li style="color: orange"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if ((ViewBag.x1 < 10 && ViewBag.x1 >= 8) || (ViewBag.x1 > 14 && ViewBag.x1 <= 15))
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1</b></li>
+                        }
+                        else if (ViewBag.x1 < 8)
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Inghet</b></li>
+                        }
+                        else
+                        {
+                            <li style="color:red"><b>Temperature: @ViewBag.x1 Pericol Supraincalzire</b></li>
+                        }
+                    }
+
+
+
+                    @if (ViewBag.x2 >= 87 && ViewBag.x2 <= 89)
+                    {
+                        <li style="color:green"><b>Humidity: @ViewBag.x2</b></li>
+                    }
+                    else if ((ViewBag.x2 < 87 && ViewBag.x2 >= 85) || (ViewBag.x2 > 89 && ViewBag.x2 <= 91))
+                    {
+                        <li style="color: orange"><b>Humidity: @ViewBag.x2</b></li>
+                    }
+                    else if ((ViewBag.x2 < 85 && ViewBag.x2 >= 80) || (ViewBag.x2 > 91 && ViewBag.x2 <= 96))
+                    {
+                        <li style="color: red"><b>Humidity: @ViewBag.x2</b></li>
+                    }
+                    else if (ViewBag.x2 < 80)
+                    {
+                        <li style="color: red"><b>Humidity: @ViewBag.x2 Pericol Uscare</b></li>
+                    }
+                    else
+                    {
+                        <li style="color: red"><b>Humidity: @ViewBag.x2 Pericol Umiditate Mare</b></li>
+                    }
+
+
+
+                    @if (ViewBag.x3 >= 94.5 && ViewBag.x3 <= 95.5)
+                    {
+                        <li style="color: green"><b>Soil Humidity: @ViewBag.x3</b></li>
+                    }
+                    else if ((ViewBag.x3 < 94.5 && ViewBag.x3 >= 93) || (ViewBag.x3 > 95.5 && ViewBag.x3 < 97))
+                    {
+                        <li style="color: orange"><b>Soil Humidity: @ViewBag.x3</b></li>
+                    }
+                    else if ((ViewBag.x3 < 93 && ViewBag.x3 >= 92) || (ViewBag.x3 > 97 && ViewBag.x3 <= 98))
+                    {
+                        <li style="color:red"><b>Soil Humidity: @ViewBag.x3</b></li>
+                    }
+                    else if (ViewBag.x3 < 92)
+                    {
+                        <li style="color: red"><b>Soil Humidity: @ViewBag.x3 Pericol Uscare</b></li>
+                    }
+                    else
+                    {
+                        <li style="color: red"><b>Soil Humidity: @ViewBag.x3 Pericol Inec</b></li>
+                    }
+
+
+
+                    @if (ViewBag.x4 >= 0.035 && ViewBag.x4 <= 0.045)
+                    {
+                        <li style="color: green"><b>Carbon Dioxide: @ViewBag.x4</b></li>
+                    }
+                    else if ((ViewBag.x4 < 0.035 && ViewBag.x4 >= 0.025) || (ViewBag.x4 > 0.045 && ViewBag.x4 <= 0.055))
+                    {
+                        <li style="color: orange"><b>Carbon Dioxide: @ViewBag.x4</b></li>
+                    }
+                    else if ((ViewBag.x4 < 0.025 && ViewBag.x4 >= 0.015) || (ViewBag.x4 > 0.055 && ViewBag.x4 <= 0.065))
+                    {
+                        <li style="color: red"><b>Carbon Dioxide: @ViewBag.x4</b></li>
+                    }
+                    else if (ViewBag.x4 < 0.015)
+                    {
+                        <li style="color: red"><b>Carbon Dioxide: @ViewBag.x4 Prea putin CO2</b></li>
+                    }
+                    else
+                    {
+                        <li style="color: red"><b>Carbon Dioxide: @ViewBag.x4 Prea mult CO2</b></li>
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            </div>
+
+
+
+        </div>
+
+    }
+</div>
+
+    -->

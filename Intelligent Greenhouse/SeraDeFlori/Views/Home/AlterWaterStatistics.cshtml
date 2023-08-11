@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Alter WaterStatistics";
+}
+
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+    window.onload = function () {
+        var SoilHumidityPerSecondChart = new CanvasJS.Chart("SoilHumidityPerSecond_Chart", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "Umiditate sol pe secunda"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "Umiditate sol pe secunda",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.SoilHumidityPerSecond)
+    }
+    ]
+        });
+
+        SoilHumidityPerSecondChart.render();
+
+    }
+</script>
+
+<div id="SoilHumidityPerSecond_Chart" style="height: 370px; width: 100%;"></div>
+
+<br />
+<br />
+<br />
+
+<p><b>Media cresterii procentului de umiditate sol pe secunda este: @ViewBag.Average</b></p>
+<br />
+<br />
+<br />
+
+<table>
+    <tr>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Moment de timp</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde de udare</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Diferenta de umiditate sol</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde pana la remasurare</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Procent de umiditate pe secunda</th>
+    </tr>
+    @foreach (var x in ViewBag.WaterStatisticsList)
+    {
+        <tr>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.TimeStamp</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.SecondsWatered</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.SoilHumidityDif</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.SecondsRemeasure</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.SoilHumidityPerSecond</td>
+        </tr>
+    }
+
+</table>
+
+<br />
+
+<a href="/Home/WhereToGo" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a>
+<br />
+<a href="/Home/AlterData" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>

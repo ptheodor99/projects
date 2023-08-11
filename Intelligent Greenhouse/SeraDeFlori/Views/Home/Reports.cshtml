@@ -1,0 +1,166 @@
+﻿<!--model List<GeneralReports>;-->
+@{
+    ViewData["Title"] = "Reports";
+}
+
+
+<!--
+{
+    List<float> TemperatureList = new();
+    List<double> HumidityList = new();
+    List<double> SoilHumidityList = new();
+    List<double> CarbonDioxideList = new();
+    foreach (GeneralReports x in Model)
+    {
+        TemperatureList.Add((float)Math.Round(x.Temperature, 2));
+        HumidityList.Add(x.Humidity);
+        SoilHumidityList.Add(x.SoilHumidity);
+        CarbonDioxideList.Add(x.CarbonDioxide);
+    }
+
+
+}
+
+<p><b>Media din ultimele 100 de esantioane</b></p>
+<ul>
+    <li>
+        Temperatura: Math.Round(TemperatureList.Average(), 2);
+    </li>
+    <li>
+        Umiditate: Math.Round(HumidityList.Average(), 2);
+    </li>
+    <li>
+        Umiditatea Solului: Math.Round(SoilHumidityList.Average(), 2);
+    </li>
+    <li>
+        Dioxid de carbon: Math.Round(CarbonDioxideList.Average(), 2);
+    </li>
+
+
+</ul>
+    -->
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+window.onload = function () {
+
+    var TemperatureChart = new CanvasJS.Chart("Temperature_Chart", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "Temperatura"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "Temperatura",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Temperature)
+    }
+    ]
+});
+
+    var HumidityChart = new CanvasJS.Chart("Humidity_Chart", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "Umiditate"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "Umiditate",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.Humidity)
+    }
+    ]
+});
+
+    var SoilHumidityChart = new CanvasJS.Chart("SoilHumidity_Chart", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "Umiditate sol"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "Umiditate sol",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.SoilHumidity)
+    }
+    ]
+});
+
+    var CarbonDioxideChart = new CanvasJS.Chart("CarbonDioxide_Chart", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "Dioxid de carbon"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "Dioxid de carbon",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.CarbonDioxide)
+    }
+    ]
+});
+
+    var LightPercentChart = new CanvasJS.Chart("LightPercent_Chart", {
+        exportEnabled: true,
+    animationEnabled: true,
+    title: {
+        text: "Procent de iluminare"
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "line",
+        name: "Procent de iluminare",
+        showInLegend: true,
+        dataPoints: @Html.Raw(ViewBag.LightPercent)
+    }
+    ]
+});
+
+    TemperatureChart.render();
+
+    HumidityChart.render();
+
+    SoilHumidityChart.render();
+
+    CarbonDioxideChart.render();
+
+    LightPercentChart.render();
+
+}
+</script>
+
+
+
+
+<div id="Temperature_Chart" style="height: 370px; width: 100%;"></div>
+
+<div id="Humidity_Chart" style="height: 370px; width: 100%;"></div>
+
+<div id="SoilHumidity_Chart" style="height: 370px; width: 100%;"></div>
+
+<div id="CarbonDioxide_Chart" style="height: 370px; width: 100%;"></div>
+
+<div id="LightPercent_Chart" style="height: 370px; width: 100%;"></div>
+
+<a href="/Home/WhereToGo" style="text-decoration:none; color: black;">Inapoi</a>
+
+
+
+

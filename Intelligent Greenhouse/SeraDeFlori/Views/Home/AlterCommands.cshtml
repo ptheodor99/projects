@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "View Commands";
+}
+
+
+
+<p><b>Comenzile actuale sunt:</b></p>
+<ul>
+    @if(ViewBag.CommandsObject.Hot == "OFF")
+    {
+        <li>Ventilator cald: Oprit</li>
+    }
+    else
+    {
+        <li>Ventilator cald: Pornit pentru @ViewBag.CommandsTimeObject.Hot secunde</li>
+    }
+
+    @if(ViewBag.CommandsObject.Cold == "OFF")
+    {
+        <li>Ventilator rece: Oprit</li>
+    }
+    else
+    {
+        <li>Ventilator rece: Pornit pentru @ViewBag.CommandsTimeObject.Cold secunde</li>
+    }
+
+    @if(ViewBag.CommandsObject.Pelt == "OFF")
+    {
+        <li>Peltier: Oprit</li>
+    }
+    else
+    {
+        <li>Peltier: Pornit pentru @ViewBag.CommandsTimeObject.Pelt secunde</li>
+    }
+
+    @if(ViewBag.CommandsObject.Pump == "OFF")
+    {
+        <li>Pompa: Oprit</li>
+    }
+    else
+    {
+        <li>Pompa: Pornit pentru @ViewBag.CommandsTimeObject.Pump secunde</li>
+    }
+
+    @if(ViewBag.CommandsObject.Light == "OFF")
+    {
+        <li>Lumini: Oprit</li>
+    }
+    else
+    {
+        <li>Lumini: Pornit pentru @ViewBag.CommandsTimeObject.Light secunde</li>
+    }
+</ul>
+
+<br />
+
+<form method="post">
+    <fieldset>
+        <label>Selecteaza dispozitivul:</label>
+        <br />
+        <select name="App">
+            <optgroup label="Dispozitiv">
+                <option value="Hot">Ventilator cald</option>
+                <option value="Cold">Ventilator rece</option>
+                <option value="Pelt">Peltier</option>
+                <option value="Pump">Pompa</option>
+                <option value="Light">Lumini</option>
+            </optgroup>
+        </select>
+        <br />
+        <label>Selecteaza comanda:</label>
+        <br />
+        <select name="Command">
+            <optgroup label="Comanda">
+                <option value="ON">Pornit</option>
+                <option value="None">Reincarca</option>
+            </optgroup>
+        </select>
+        <br />
+        <label>Introdu timpul daca ai ales Pornit</label>
+        <br />
+        <input type="text" name="Time" style="width:80px;" />
+        <br />
+        <input type="submit" value="Modifica"/>
+
+    </fieldset>
+</form>
+
+<br />
+<a href="/Home/WhereToGo" style="text-decoration:none; color: black;">Inapoi</a>

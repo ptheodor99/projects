@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "View Malicious";
+}
+
+<table>
+    <tr>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde de udare</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde Peltier pornit</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde Peltier oprit</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde de masurare</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde masurare umiditate sol dupa udare</th>
+    </tr>
+    <tr>
+        <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.WaterTime</td>
+        <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.MaxPeltTimeOn</td>
+        <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.MaxPeltTimeOff</td>
+        <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.MeasureTime</td>
+        <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.WaterDelayTime</td>
+    </tr>
+</table>
+
+<br />
+
+<a href="/Home/WhereToGo" style="text-decoration:none; color: black;">Inapoi</a>

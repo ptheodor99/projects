@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Alter EnvData";
+}
+
+
+
+<table>
+    <tr>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Moment de timp</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Temperatura</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Umiditate</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Umiditate sol</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Dioxid de carbon</th>
+        <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Procent de iluminare</th>
+
+    </tr>
+    @foreach (var x in ViewBag.EnviroenmentDataList)
+    {
+        <tr>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.TimeStamp</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Temperature</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.Humidity</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.SoilHumidity</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.CarbonDioxide</td>
+            <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@x.LightPercent</td>
+        </tr>
+    }
+
+</table>
+
+<br />
+
+<a href="/Home/WhereToGo" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a>
+<br />
+<a href="/Home/AlterData" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>

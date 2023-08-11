@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "View Limit Values";
+}
+
+<p>Valorile limita admise pentru mediu sunt:</p>
+
+<ul>
+    <li>Temperatura minima: @ViewBag.LimitValuesObject.MinTemp grade Celsius</li>
+    <li>Temperatura maxima: @ViewBag.LimitValuesObject.MaxTemp grade Celsius</li>
+    <li>Umiditatea minima: @ViewBag.LimitValuesObject.MinHumidity%</li>
+    <li>Umiditatea maxima: @ViewBag.LimitValuesObject.MaxHumidity%</li>
+    <li>Umiditatea solului minima: @ViewBag.LimitValuesObject.MinSoilHumidity%</li>
+    <li>Umiditatea solului maxima: @ViewBag.LimitValuesObject.MaxSoilHumidity%</li>
+    <li>Iluminare minima: @ViewBag.LimitValuesObject.MinLightPercent%</li>
+</ul>
+
+<a href="/Home/WhereToGo" style="text-decoration:none; color: black;">Inapoi</a>

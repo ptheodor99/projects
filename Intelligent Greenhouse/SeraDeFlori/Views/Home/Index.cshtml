@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--
+<div class="text-center">
+    <h1 class="display-4">Bine ati venit pe sera de flori inteligenta</h1>
+
+    <div style="position:relative; left:200px;top:150px;">
+        <div style="width: 244px; height: 244px; background-color: #333333; position:relative; left:-200px;">
+            <a href="Home/InformatiiFlori" style="text-decoration:none;">
+                <img src="~/Images/Plante.jpg" width="240" height="180" style="position: relative; top:2px;" />
+
+                <p style="color: white"><br /><b>Informatii despre flori</b></p>
+            </a>
+        </div>
+
+        <div style="width:244px;height:244px;background-color:#333333; position:relative; top:-244px; left: 194px;">
+            <a href="Home/SeraMea" style="text-decoration:none;">
+                <img src="~/Images/Sera.jpg" width="240" height="180" style="position: relative; top:2px;" />
+
+                <p style="color: white"><br /><b>Sera Mea</b></p>
+            </a>
+        </div>
+
+        <div style="width:244px;height:244px;background-color:#333333; position:relative; top:-488px; left: 594px;">
+            <a href="Home/Reports" style="text-decoration:none;">
+                <img src="~/Images/Grafic.png" width="240" height="180" style="position:relative; top:2px;" />
+                <p style="color:white"><br /><b>Rapoarte</b></p>
+            </a>
+
+        </div>
+
+    </div>
+
+    <div style="width:244px;height:244px;background-color:#333333; position:relative; top:-244px; left: 194px;">
+        <a href="Home/Power" style="text-decoration:none;">
+            <img src="~/Images/PieChart.png" width="240" height="180" style="position: relative; top:2px;" />
+
+            <p style="color: white"><br /><b>Putere Utilizata</b></p>
+        </a>
+    </div>
+
+    <div style="width: 244px; height: 244px; background-color: #333333; position: relative; top: -488px; left: 594px; ">
+        <a href="Home/ModifyData" style="text-decoration:none;">
+            <img src="~/Images/ModData.jpg" width="240" height="180" style="position: relative; top:2px;" />
+
+            <p style="color: white"><br /><b>Modify Data</b></p>
+        </a>
+    </div>
+
+</div>
+    -->
+
+<div class="text-center">
+    <form method="post">
+        <fieldset>
+            <label>Username:</label><br />
+            <input type="text" name="user" /><br />
+            <label>Password:</label><br />
+            <input type="password" name="password" /><br /><br />
+            <input type="submit" value="Login" />
+        </fieldset>
+    </form>
+
+    @if (ViewBag.InvalidLogin == true)
+    {
+        <br />
+        <p style="color:red;">Date de logare invalide!!</p>
+    }
+</div>

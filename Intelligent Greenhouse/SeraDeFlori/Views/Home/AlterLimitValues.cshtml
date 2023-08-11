@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Alter Limit Values";
+}
+
+
+
+<form method="post">
+    <fieldset>
+        <table>
+            <tr>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Temperatura minima</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Temperatura maxima</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Umiditate minima</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Umiditate maxima</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Umiditate sol minima</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Umiditate sol maxima</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Procent de iluminare minim</th>
+
+            </tr>
+
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.LimitValuesObject.MinTemp</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.LimitValuesObject.MaxTemp</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.LimitValuesObject.MinHumidity</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.LimitValuesObject.MaxHumidity</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.LimitValuesObject.MinSoilHumidity</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.LimitValuesObject.MaxSoilHumidity</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.LimitValuesObject.MinLightPercent</td>
+            </tr>
+
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MinTemp" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MaxTemp" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MinHumidity" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MaxHumidity" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MinSoilHumidity" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MaxSoilHumidity" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MinLightPercent" style="width:80px;" />
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <input type="submit" value="Modifica" />
+    </fieldset>
+</form>
+
+<a href="/Home/WhereToGo" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a><br />
+<a href="/Home/AlterData" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>

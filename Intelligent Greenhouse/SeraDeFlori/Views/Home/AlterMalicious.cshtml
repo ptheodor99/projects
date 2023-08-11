@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Alter Malicious";
+}
+
+
+
+<form method="post">
+    <fieldset>
+        <table>
+            <tr>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde de udare</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde Peltier pornit</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde Peltier oprit</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde de masurare</th>
+                <th style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">Secunde masurare umiditate sol dupa udare</th>
+            </tr>
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.WaterTime</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.MaxPeltTimeOn</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.MaxPeltTimeOff</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.MeasureTime</td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">@ViewBag.MaliciousObject.WaterDelayTime</td>
+            </tr>
+            <tr>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="WaterTime" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MaxPeltTimeOn" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MaxPeltTimeOff" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="MeasureTime" style="width:80px;" />
+                </td>
+                <td style="width: 200px; height: 20px; border: 1px solid black; text-align: center;">
+                    <input type="text" name="WaterDelayTime" style="width:80px;" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <input type="submit" value="Modifica" />
+    </fieldset>
+</form>
+
+
+
+<br />
+
+<a href="/Home/WhereToGo" style="text-decoration:none; color: black;">Inapoi la selectarea paginilor</a>
+<br />
+<a href="/Home/AlterData" style="text-decoration:none; color: black;">Inapoi la selectarea tabelelor</a>
