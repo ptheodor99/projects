@@ -1,0 +1,543 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+button{
+	background-color: rgb(110,166,248) !important;
+}
+
+header{
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	width: 100%;
+	background: white;
+	border-bottom: 1px solid lightgray;
+	#box-shadow: 0px 5px 10px lightgray;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+header button{
+	text-decoration: none;
+	margin: 0;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	padding: 0.2rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	border: 0;
+	background: transparent !important;
+	font-size: 1.5rem;
+	font-weight: 600;
+	transition: 1s;
+	color: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+
+header button:hover{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+header img{
+	width: 6.36rem;
+	height: 2rem;
+	padding-left: 1rem;
+	padding-right: 3rem;
+}
+
+main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: transparent;
+}
+
+.page-general{
+	margin-top: 7rem;
+	margin-bottom: 7rem;
+	width: 90%;
+	padding-left: 5rem;
+	font-size: 1.5rem;
+}
+
+.page-general p{
+	width: 90%;
+}
+
+.page-general img{
+	width: 25.44rem;
+	height: 8rem;
+}
+
+.login-form{
+	margin-top: 10rem;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	padding: 2rem;
+	border-radius: 1.5rem;
+	box-shadow: 0px 10px 10px gray;
+}
+
+.login-form label{
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.login-form input{
+	font-size: 1.5rem;
+	padding: 0.25rem;
+	padding-left: 1.5rem;
+	width: 80%;
+	margin-left: 5%;
+	border-radius: 0.75rem;
+	border: 0.5px solid gray;
+}
+
+.login-form button{
+	width: 50%;
+	font-size: 1.5rem;
+	padding: 0.25rem;
+	margin: 0;
+	margin-left: 25%;
+	font-weight: 600;
+	border: 0;
+	border-radius: 0.5rem;
+	background-color: rgb(110,166,248);
+	color: white;
+	transition: 1s;
+}
+
+.login-form button:hover{
+	box-shadow: 0px 5px 5px gray;
+}
+
+footer{
+	width: 100%;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: gray;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin-top: 2rem;
+	text-align: center;
+	font-size: 1.2rem;
+	color: white;
+}
+
+#tabel-profi{
+	margin: 2rem;
+	margin-top: 7rem;	
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  box-shadow: 0px 5px 5px gray;
+}
+
+td, th {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+#tabel-profi button{
+	width: 70%;
+	font-size: 1rem;
+	padding: 0.15rem;
+	margin: 0;
+	margin-left: 15%;
+	font-weight: 600;
+	border: 0;
+	border-radius: 0.35rem;
+	background-color: #04AA6D;
+	color: white;
+	transition: 1s;
+}
+
+#tabel-profi button:hover{
+	box-shadow: 0px 5px 5px gray;
+}
+
+#tabel-profi input[type="text"]{
+	font-size: 1rem;
+	padding: 0.2rem;
+	padding-left: 1rem;
+	margin: 0;
+	border-radius: 0.5rem;
+	width: 90%;
+}
+
+#page-intrebari{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-top: 7rem;
+	margin-bottom: 7rem;
+}
+
+#sub-libere{
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	padding: 4%;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+#sub-exam{
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	padding: 4%;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+.subiect{
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 4%;
+	margin-left: 0;
+	margin-right: 0;
+	border: 1px solid black;
+	border-radius: 2rem;
+	background: white;
+	box-shadow: 0px 5px 5px gray;
+}
+
+.subiect-top{
+	text-align: center;
+	font-size: 1.5rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	font-weight: 600;
+}
+
+.subiect-bottom{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	justify-content: center;
+}
+
+.subiect-bottom span{
+	padding-top: 0.25 rem;
+	padding-bottom: 0.25rem;
+	font-size: 1.5rem;
+}
+
+.subiect-bottom button{
+	font-size: 1rem;
+	padding: 0.15rem;
+	margin: 0;
+	margin-left: 1rem;
+	font-weight: 600;
+	border: 0;
+	border-radius: 0.35rem;
+	background-color: #04AA6D;
+	color: white;
+	transition: 1s;	
+	margin-top: 0.5rem;
+}
+
+.subiect-bottom button:hover{
+	box-shadow: 0px 5px 5px gray;
+}
+
+.subiect-bottom input{
+	font-size: 1.5rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	padding-left: 1rem;
+}
+
+.subiect-bottom input[type="datetime-local"]{
+	margin-left: 1rem;
+}
+
+.subiect-bottom label{
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+#pagina-subiecte{
+	margin-top: 7rem;
+	width: 100%;
+}
+
+#pagina-subiecte span{
+	font-size: 1.5rem;
+}
+
+#pagina-subiecte button{
+	font-size: 1rem;
+	padding: 0.15rem;
+	margin: 0;
+	margin-left: 1rem;
+	font-weight: 600;
+	border: 0;
+	border-radius: 0.35rem;
+	background-color: #04AA6D;
+	color: white;
+	transition: 1s;	
+}
+
+#pagina-subiecte button:hover{
+	box-shadow: 0px 5px 5px gray;
+}
+
+#pagina-subiecte ul li{
+	font-size: 1.2rem;
+}
+
+.page-variante{
+	width: 100%;
+	margin-top: 7rem;
+	margin-bottom: 7rem;
+	display: flex;
+	flex-direction: row;
+}
+
+.page-variante-left{
+	width: 49%;
+	display: flex;
+	flex-direction: column;	
+	margin-left: 2rem;
+}
+
+.page-variante-right{
+	width: 49%;
+	display: flex;
+	flex-direction: column;
+	margin-left: 2rem;
+	margin-top: 3rem;
+	position: fixed;
+	margin-left: 49%;
+}
+
+.page-variante-right textarea{
+	padding: 0.5rem;
+	padding-left: 1rem;
+	font-size: 1.25rem;
+}
+
+.page-variante-right-bottom{
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	width: 75%;
+}
+
+.page-variante-right-bottom input{
+	margin-top: 0.5rem;
+	font-size: 1.5rem;
+	padding-left: 1rem;
+}
+
+.page-variante-right-bottom select{
+	font-size: 1.5rem;
+	margin-top: 0.5rem;
+}
+
+.page-variante-right-bottom button{
+	font-size: 1.5rem;
+	padding: 0.15rem;
+	margin: 0;
+	margin-top: 0.5rem;
+	font-weight: 600;
+	border: 0;
+	border-radius: 0.35rem;
+	background-color: #04AA6D;
+	color: white;
+	transition: 1s;
+}
+
+.page-variante-right-bottom button:hover{
+	box-shadow: 0px 5px 5px gray;
+}
+
+.page-rezultate{
+	width: 100%;
+	margin-top: 7rem;
+	font-size: 1.5rem;
+	margin-bottom: 7rem;
+}
+
+.page-rezultate ol{
+	margin-left: 2rem;
+	margin-right: 4rem;
+}
+
+.G1{
+	width: 80%;
+	height: 25rem;
+	margin-left: 5rem;
+}	
+
+.page-inscrieri{
+	width: 100%;
+	margin-top: 7rem;
+	margin-bottom: 7rem;
+	display: flex;
+	flex-direction: row;
+}
+
+.page-inscrieri-left{
+	display: flex;
+	flex-direction: column;
+	width: 49%;
+	padding-left: 3rem;
+}
+
+.page-inscrieri-right{
+	display: flex;
+	flex-direction: column;
+	width: 49%;
+	margin-left: 5rem;
+	padding-right: 5rem;
+}
+
+.student{
+	display: flex;
+	flex-direction: row;
+	font-size: 1.5rem;
+	padding: 0.25rem;
+	margin-top: 1rem;
+	border: 1px solid black;
+	box-shadow: 0px 5px 5px gray;
+	background: white;
+	border-radius: 2rem;
+}
+
+.student div{
+	margin-left: 1rem;
+}
+
+.student input{
+	width: 1rem;
+	height: 1rem;
+}
+
+.student li{
+	display: block;
+}
+
+.materie{
+	display: flex;
+	flex-direction: row;
+	font-size: 1.5rem;
+	padding: 0.25rem;
+	margin-top: 1rem;
+	border: 1px solid black;
+	box-shadow: 0px 5px 5px gray;
+	background: white;
+	border-radius: 2rem;
+	width: 70%
+}
+
+.materie div{
+	margin-left: 1rem;
+}
+
+.materie button{
+	font-size: 1.5rem;
+	padding: 0.15rem;
+	margin: 0;
+	margin-right: 2rem;
+	font-weight: 600;
+	border: 0;
+	border-radius: 0.35rem;
+	background-color: #04AA6D;
+	color: white;
+	transition: 1s;
+}
+
+.materie button:hover{
+	box-shadow: 0px 5px 5px gray;
+}
+
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 0.45rem;
+}
+
+#generateAddProfForm{
+	margin-top: 2rem;
+	padding: 1rem;
+	margin-bottom: 6rem;
+}
+
+#generateAddProfForm input{
+	margin-top: 1rem;
+	font-size: 1.5rem;
+	padding: 0.25rem;
+	padding-left: 1rem;
+	border-radius: 0.5rem;
+}
+
+#generateAddProfForm select{
+	font-size: 1.5rem;
+	border-radius: 0.5rem;
+	margin-right: 1rem;	
+	margin-top: 1rem;
+}
+
+#generateAddProfForm button{
+	font-size: 1.5rem;
+	margin-top: 1rem;
+	margin-right: 1rem;
+	text-decoration: none;
+	border-radius: 1rem;
+	border: 0;
+}
+
+#sortare{
+	margin-top: 6rem;
+}
+
+#sortare button{
+	font-size: 1.5rem;
+	text-decoration: none;
+	border-radius: 1rem;
+	border: 0;
+}
+
+#sortare select{
+	font-size: 1.5rem;
+	border-radius: 0.5rem;
+}
+
+#searchStudent{
+	font-size: 1.5rem;
+	padding: 0.25rem;
+	padding-left: 1rem;
+	border-radius: 0.5rem;
+}
